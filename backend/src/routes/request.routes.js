@@ -13,7 +13,6 @@ export const Request = (app) => {
             nmapProcess.on("close", async (code) => {
                 if (code === 0) {
                     let { host, scanType, maxRetries, hostTimeout, port, origin } = req.body
-                    console.log("origin :", origin)
                     origin = origin.split('"').join("").split("'").join("")
                     const NewRequestModel = new RequestModel({ host, scanType, maxRetries, hostTimeout, port, origin, scanResult })
                     await NewRequestModel.save()
