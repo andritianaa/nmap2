@@ -14,7 +14,7 @@ const Auth = () => {
                 .then((response) => {
                     localStorage.setItem("id", response.data.id)
                     alert(`Votre compte a été créé`)
-                    window.location.href = "/scan"
+                    window.location.href = "/nmaper"
                 }).catch(() => { alert("Le compte n'a pas été créé") })
         }
     }
@@ -25,7 +25,7 @@ const Auth = () => {
                 .then((response) => {
                     localStorage.setItem("id", response.data.id)
                     alert(`Vous êtes connecté`)
-                    window.location.href = "/scan"
+                    window.location.href = "/nmaper"
                 }).catch(() => { alert("Vous avez entré un mauvais email ou un mauvais mot de passe") })
         }
     }

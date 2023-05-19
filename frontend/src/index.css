@@ -132,6 +132,7 @@ nav {
 }
 
 nav a {
+  background-color: black;
   color: white;
   text-decoration: none;
   padding: 1rem;
@@ -145,4 +146,8 @@ nav a:hover {
   color: black;
   transition: ease all .2s;
   text-decoration: underline;
+}
+
+#disconnect {
+  margin-right: 1rem;
 }

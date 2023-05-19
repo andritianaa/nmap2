@@ -20,7 +20,6 @@ const Scan = () => {
             scanning.style.display = "flex"
             await axios.post("http://localhost:8080/scan", data).then(() => {
                 window.location.href = "/result"
-                alert(`Scan réussi`)
             }).catch(() => alert("Impossible de faire le scan"))
             scanning.style.display = "none"
         } else {

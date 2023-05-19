@@ -9,7 +9,7 @@ const Navbar = () => {
             <a href="/nmaper">nmaper</a>
             <a href="/history">historique</a>
             <a href="/result">resultat</a>
-            <a href="/" onClick={handleDisconnect}>Deconnexion</a>
+            <a id="disconnect" href="/" onClick={handleDisconnect}>Deconnexion</a>
         </nav>
     )
 }
