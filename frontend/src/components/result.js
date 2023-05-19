@@ -20,7 +20,7 @@ const Result = () => {
                         }
                     }).catch(() => alert("Impossible d'avoir la liste des requête"))
             }
-
+            // eslint-disable-next-line
             isRequested = true
         }
         request()

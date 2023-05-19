@@ -12,15 +12,9 @@ const History = () => {
             if (isRequested) {
                 let origin = localStorage.getItem("id")
                 origin = origin.split('"').join("").split("'").join("")
-                await axios.get(`http://localhost:8080/history?origin=${origin}`, {})
-                    .then((response) => {
-                        if (response.data) {
-                            setItems(response.data.history)
-                            console.log(items)
-                        }
-                    }).catch(() => alert("Impossible d'avoir la liste des requête"))
+                await axios.get(`http://localhost:8080/history?origin=${origin}`, {}).then((response) => { if (response.data) { setItems(response.data.history) } }).catch(() => alert("Impossible d'avoir la liste des requête"))
             }
-
+            // eslint-disable-next-line
             isRequested = true
         }
         request()

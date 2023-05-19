@@ -35,7 +35,7 @@ const Scan = () => {
             <div id="blocker">
                 <h1>Scan en cours...</h1>
             </div>
-            <h2>Nmapper</h2>
+            <h2>Nmaper</h2>
             <label htmlFor="scanType">Type de scan</label>
             <select id="scanType">
                 <option selected value="">Aucun</option>
@@ -51,7 +51,7 @@ const Scan = () => {
             <input type='number' id='maxRetries' placeholder='1' required></input>
             <label htmlFor="hostTimeout">host TimeOut (ms)</label>
             <input type='number' id='hostTimeout' placeholder='1000' required></input>
-            <button onClick={handleEvent}>Scanner nmap</button>
+            <button onClick={handleEvent}>nmap</button>
 
         </div>
     )

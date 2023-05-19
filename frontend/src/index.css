@@ -127,7 +127,7 @@ nav {
   background-color: black;
   color: white;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   padding-right: 5rem;
 }
 
