@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +10,55 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-color: #f3f3f5;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.card {
+  width: 400px;
+  background-color: white;
+  border: 1px solid grey;
+  margin-top: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2px;
+}
+
+.card h2 {
+  width: 100%;
+  text-align: center;
+}
+
+label {
+  margin-bottom: .5rem;
+}
+
+input,
+button {
+  margin-bottom: .75rem;
+  height: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border: solid 2px black;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+  transition: ease-in all .075s;
 }
