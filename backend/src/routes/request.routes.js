@@ -3,7 +3,7 @@ import RequestModel from "../db/models/Request.model.js"
 import { initiateOptions } from "../utils/initiateOption.js"
 
 export const Request = (app) => {
-    app.post("/request/scan", (req, res) => {
+    app.post("/scan", (req, res) => {
         try {
             let scanResult = ""
             const option = initiateOptions(req.body)
@@ -13,21 +13,20 @@ export const Request = (app) => {
             nmapProcess.on("close", async (code) => {
                 if (code === 0) {
                     let { host, scanType, maxRetries, hostTimeout, port, origin } = req.body
+                    console.log("origin :", origin)
                     origin = origin.split('"').join("").split("'").join("")
                     const NewRequestModel = new RequestModel({ host, scanType, maxRetries, hostTimeout, port, origin, scanResult })
                     await NewRequestModel.save()
                     res.status(200).send({ tip: "Scan success" })
                 } else {
                     res.status(500).send({ tip: "Cannot scan" })
-
-
                     return
                 }
             })
         } catch (error) { res.status(500).send({ tip: `Internal server error, cannot register the user: ${error}` }) }
     })
 
-    app.get("/request/history", async (req, res) => {
+    app.get("/history", async (req, res) => {
         try {
             const { origin } = req.query
             const history = await RequestModel.find({ origin }).sort({ date: -1 })
@@ -35,7 +34,7 @@ export const Request = (app) => {
         } catch (error) { res.status(500).send({ tip: `Internal server error, cannot get history: ${error}` }) }
     })
 
-    app.get("/request/result", async (req, res) => {
+    app.get("/result", async (req, res) => {
         try {
             const { origin } = req.query
             const history = await RequestModel.findOne({ origin }).sort({ date: -1 })

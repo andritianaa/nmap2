@@ -1,27 +1,31 @@
 import { useState } from "react"
 import axios from "axios"
+import { useEffect } from "react"
+
 const Auth = () => {
+    useEffect(() => { if (localStorage.getItem("id")) { window.location.href = "/result" } })
+
     const [emailValue, setEmail] = useState("")
     const [passwordValue, setPassword] = useState("")
-    const handleLogin = async () => {
-        if (!(emailValue && passwordValue)) { alert("Remplissez les deux champs") }
-        else {
-            await axios.post("http://localhost:8080/login", { email: emailValue, password: passwordValue })
-                .then((response) => {
-                    localStorage.setItem("id", JSON.stringify(response.data.id))
-                    alert(`Votre compte a été créé`)
-                    // window.location.href = "/scan"
-                }).catch(() => { alert("Le compte n'a pas été créé") })
-        }
-    }
     const handleRegister = async () => {
         if (!(emailValue && passwordValue)) { alert("Remplissez les deux champs") }
         else {
             await axios.post("http://localhost:8080/register", { email: emailValue, password: passwordValue })
                 .then((response) => {
-                    localStorage.setItem("id", JSON.stringify(response.data.id))
+                    localStorage.setItem("id", response.data.id)
+                    alert(`Votre compte a été créé`)
+                    window.location.href = "/scan"
+                }).catch(() => { alert("Le compte n'a pas été créé") })
+        }
+    }
+    const handleLogin = async () => {
+        if (!(emailValue && passwordValue)) { alert("Remplissez les deux champs") }
+        else {
+            await axios.post("http://localhost:8080/login", { email: emailValue, password: passwordValue })
+                .then((response) => {
+                    localStorage.setItem("id", response.data.id)
                     alert(`Vous êtes connecté`)
-                    // window.location.href = "/scan"
+                    window.location.href = "/scan"
                 }).catch(() => { alert("Vous avez entré un mauvais email ou un mauvais mot de passe") })
         }
     }

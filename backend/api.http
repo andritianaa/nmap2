@@ -2,7 +2,7 @@ POST http://localhost:8080/register
 Content-Type: application/json
 
 {
-    "email": "andritianasteve@gmail.com",
+    "email": "test@gmail.com",
     "password":""
 }
 ###
@@ -10,12 +10,12 @@ POST http://localhost:8080/login
 Content-Type: application/json
 
 {
-    "email": "andritianasteve@gmail.com",
+    "email": "test@gmail.com",
     "password":""
 }
 
 ###
-POST http://localhost:8080/request/scan
+POST http://localhost:8080/scan
 Content-Type: application/json
 
 {
@@ -28,7 +28,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8080/request/history?origin=64674ca707dbc9206e0098e1
+GET http://localhost:8080/history?origin=64674ca707dbc9206e0098e1
 
 ###
-GET http://localhost:8080/request/result?origin=64674ca707dbc9206e0098e1
+GET http://localhost:8080/result?origin=64674ca707dbc9206e0098e1

@@ -6,7 +6,7 @@ export const UserAuth = (app) => {
   app.post("/register", async (req, res) => {
     try {
       const { email, password } = req.body
-      const newUser = new UserModel({ email, password: hashPassword(password) }).save()
+      const newUser = await new UserModel({ email, password: hashPassword(password) }).save()
       res.status(200).send({ tip: "User registered", token: generateToken(newUser._id, email), id: newUser._id })
     } catch (error) { res.status(500).send({ tip: `Internal server error, cannot register the user: ${error}` }) }
   })
