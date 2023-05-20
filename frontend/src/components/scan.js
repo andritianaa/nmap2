@@ -29,29 +29,42 @@ const Scan = () => {
 
     return (
 
-        <div className='card'>
+        <div className='scan'>
             <Navbar />
 
             <div id="blocker">
                 <h1>Scan en cours...</h1>
             </div>
             <h2>Nmaper</h2>
-            <label htmlFor="scanType">Type de scan</label>
-            <select id="scanType">
-                <option selected value="">Aucun</option>
-                <option value="-sS">-sS</option>
-                <option value="-sV">-sV</option>
-                <option value="-sO">-sO</option>
-            </select>
-            <label htmlFor="host">Host</label>
-            <input type='text' id='host' placeholder='127.0.0.1' required></input>
-            <label htmlFor="port">Port</label>
-            <input type='number' id='port' placeholder='27014' required></input>
-            <label htmlFor="maxRetries">max retries</label>
-            <input type='number' id='maxRetries' placeholder='1' required></input>
-            <label htmlFor="hostTimeout">host TimeOut (ms)</label>
-            <input type='number' id='hostTimeout' placeholder='1000' required></input>
-            <button onClick={handleEvent}>nmap</button>
+            <div className="nmapForm">
+                <span>
+                    <label htmlFor="scanType">Type de scan</label>
+                    <select id="scanType">
+                        <option selected value="">Aucun</option>
+                        <option value="-sS">-sS</option>
+                        <option value="-sV">-sV</option>
+                        <option value="-sO">-sO</option>
+                    </select>
+                </span>
+                <span>
+                    <label htmlFor="host">Host</label>
+                    <input type='text' id='host' placeholder='127.0.0.1' required></input>
+                </span>
+                <span>
+                    <label htmlFor="port">Port</label>
+                    <input type='number' id='port' placeholder='27014' required></input>
+                </span>
+                <span>
+                    <label htmlFor="maxRetries">max retries</label>
+                    <input type='number' id='maxRetries' placeholder='1' required></input>
+                </span>
+                <span>
+                    <label htmlFor="hostTimeout">host TimeOut (ms)</label>
+                    <input type='number' id='hostTimeout' placeholder='1000' required></input>
+                </span>
+
+                <button onClick={handleEvent}>nmap</button>
+            </div>
 
         </div>
     )
