@@ -23,7 +23,7 @@ const Scan = () => {
             }).catch(() => alert("Impossible de faire le scan"))
             scanning.style.display = "none"
         } else {
-            alert("Veuillez remplir au moin le champ host")
+            alert("Indique l'host")
         }
     }
 
@@ -42,7 +42,6 @@ const Scan = () => {
                     <select id="scanType">
                         <option selected value="">Aucun</option>
                         <option value="-sS">-sS</option>
-                        <option value="-sV">-sV</option>
                         <option value="-sO">-sO</option>
                     </select>
                 </span>
