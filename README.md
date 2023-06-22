@@ -36,3 +36,12 @@ Start the frontend application:
 ``` bash
 npm run start
 ```
+
+## Usage
+Once the backend server and the frontend application are running, you can access the NMAP2 application in your web browser.
+
+## Contributing
+Contributions are welcome! If you find any issues or have suggestions, please open an issue or submit a pull request.
+
+## License
+NMAP2 is licensed under the MIT License.
